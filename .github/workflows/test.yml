@@ -46,6 +46,9 @@ jobs:
           - "ubuntu-24.04-arm"
         include:
           - python-version: "3.10"
+            kind: "old"
+            os: "ubuntu-24.04-arm"
+          - python-version: "3.10"
             kind: "no-toml"
             os: "ubuntu-24.04-arm"
           - python-version: "3.13"
@@ -53,7 +56,7 @@ jobs:
             os: "windows-latest"
     name: "${{ matrix.python-version }} ${{ matrix.kind }} ${{ matrix.os }}"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
       - name: Setup python
@@ -72,6 +75,8 @@ jobs:
           pip install -e ".[dev]" # install the codetypo dev packages
       - run: pip install aspell-python-py3
         if: startsWith(matrix.os, 'ubuntu')
+      - run: pip install "chardet<7"
+        if: ${{ matrix.kind == 'old' }}
       - run: codetypo --help
       - run: codetypo --version
       - run: make check
@@ -106,7 +111,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -129,7 +134,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Run Bandit security scanner
         uses: PyCQA/bandit@main
@@ -150,7 +155,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
       - name: Install general dependencies

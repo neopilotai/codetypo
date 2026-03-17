@@ -14,3 +14,4 @@ codetypo.egg-info
 codetypo/_version.py
 junit-results.xml
 *.egg-info/
+.DS_Store

@@ -107,6 +107,12 @@ Example in ``setup.cfg``:
    count =
    quiet-level = 3
 
+Reading arguments from file
+---------------------------
+
+Additional arguments can be read from a file with ``@PATH``. Arguments are
+extracted using ``shlex.split()``.
+
 Pre-commit Hook
 ---------------
 Codetypo works with `pre-commit <https://pre-commit.com/>`_:
