@@ -73,7 +73,7 @@ Useful Commands
 
    codetypo -d -q 3 --skip="*.po,*.ts,./src/3rdParty,./src/Test"
 
-List all typos found except translation files and some directories. Display them without terminal colors and with a quiet level of 3.
+List all codetypo found except translation files and some directories. Display them without terminal colors and with a quiet level of 3.
 
 .. code-block:: sh
 
@@ -106,6 +106,12 @@ Example in ``setup.cfg``:
    skip = *.po,*.ts,./src/3rdParty,./src/Test
    count =
    quiet-level = 3
+
+Reading arguments from file
+---------------------------
+
+Additional arguments can be read from a file with ``@PATH``. Arguments are
+extracted using ``shlex.split()``.
 
 Pre-commit Hook
 ---------------

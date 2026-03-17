@@ -147,6 +147,7 @@ infarction->infraction
 infarctions->infractions
 ingenuous->ingenious
 inly->only
+insteam->instead
 intensional->intentional
 irregardless->regardless
 joo->you
@@ -181,6 +182,7 @@ mistakingly->mistakenly
 moil->soil, mohel,
 mot->not
 moue->mouse
+mouting->moulting, mounting, mouthing, muting, pouting,
 multistory->multistorey, multi-storey,
 nickle->nickel
 noes->nose, knows, nodes, does,
@@ -222,6 +224,7 @@ protestors->protesters
 provence->province
 purportive->supportive
 purvue->purview
+quater->quarter
 ques->quest, queues, cues,
 readd->re-add, read,
 readded->re-added, read,
